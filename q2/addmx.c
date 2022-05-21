@@ -38,17 +38,8 @@ int main(int argc, char *argv[])
         j = 0;
     }
     fclose(fp);
-    /*
-        printf("r:%d c:%d\n", rows, cols);
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                printf("%d ", matrix1[i][j]);
-            }
-            printf("\n");
-        }
-    */
+    
+
     if ((fp = fopen(infile2, "r")) == NULL)
     {
         perror("cannot open file");
@@ -75,16 +66,6 @@ int main(int argc, char *argv[])
         j = 0;
     }
     fclose(fp);
-
-    /*printf("r:%d c:%d\n", rows,cols);
-    for (i = 0; i < rows; i++)
-    {
-        for (j = 0; j < cols; j++)
-        {
-            printf("%d ", matrix2[i][j]);
-        }
-        printf("\n");
-    }*/
 
     int nProcs = cols;
 
@@ -121,7 +102,6 @@ int main(int argc, char *argv[])
         }
     }
     else
-        // Por favor use um m >= 2
         for (int m = 0; m < nProcs - 1; m++)
         {
             int id = fork();
@@ -151,3 +131,4 @@ int main(int argc, char *argv[])
         }
         return 0;
 }
+
