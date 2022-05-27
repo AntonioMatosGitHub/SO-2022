@@ -8,7 +8,7 @@ int main(int argc, char* argv[]) {
     FILE *file;
     char c;
     int phrases = 1;
-    file = fopen(argv[1], "r");
+    file = fopen("quote.txt", "r");
     bool flag = false;
 
     if(argc == 3){
